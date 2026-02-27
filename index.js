@@ -1,8 +1,6 @@
 const express = require("express");
 const app = express();
 
-const { Client, GatewayIntentBits } = require("discord.js");
-
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
@@ -295,4 +293,5 @@ Envie comprovante`
 }
 
 client.login(TOKEN);
+
 
