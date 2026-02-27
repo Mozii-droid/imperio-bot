@@ -1,13 +1,23 @@
 const express = require("express");
 const app = express();
 
+const {
+  Client,
+  GatewayIntentBits,
+  EmbedBuilder,
+  ActionRowBuilder,
+  ButtonBuilder,
+  ButtonStyle,
+  PermissionsBitField
+} = require("discord.js");
+
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
     GatewayIntentBits.GuildMessages,
-    GatewayIntentBits.MessageContent,
     GatewayIntentBits.GuildMembers,
-  ],
+    GatewayIntentBits.MessageContent
+  ]
 });
 
 app.get("/", (req, res) => {
@@ -18,24 +28,7 @@ app.listen(process.env.PORT || 3000, () => {
   console.log("Servidor web ativo");
 });
 
-const {
- Client,
- GatewayIntentBits,
- EmbedBuilder,
- ActionRowBuilder,
- ButtonBuilder,
- ButtonStyle,
- PermissionsBitField
-} = require("discord.js");
-
-const client = new Client({
- intents: [
-  GatewayIntentBits.Guilds,
-  GatewayIntentBits.GuildMessages,
-  GatewayIntentBits.GuildMembers,
-  GatewayIntentBits.MessageContent
- ]
-});
+client.login(process.env.TOKEN);
 
 // ================= CONFIG =================
 
@@ -293,5 +286,6 @@ Envie comprovante`
 }
 
 client.login(TOKEN);
+
 
 
