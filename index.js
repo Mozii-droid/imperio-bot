@@ -1,3 +1,25 @@
+const express = require("express");
+const app = express();
+
+const { Client, GatewayIntentBits } = require("discord.js");
+
+const client = new Client({
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.MessageContent,
+    GatewayIntentBits.GuildMembers,
+  ],
+});
+
+app.get("/", (req, res) => {
+  res.send("Bot está online");
+});
+
+app.listen(process.env.PORT || 3000, () => {
+  console.log("Servidor web ativo");
+});
+
 const {
  Client,
  GatewayIntentBits,
@@ -273,3 +295,4 @@ Envie comprovante`
 }
 
 client.login(TOKEN);
+
