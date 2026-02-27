@@ -40,9 +40,7 @@ const filas = {
 
 // BOT ONLINE
 
-client.on("ready", ()=>{
-
- console.log(Online como ${client.user.tag});
+client.on('ready', ()=>{
 
 });
 
@@ -200,14 +198,14 @@ async function criarPagamento(guild,tipo){
 
  const fila = filas[tipo];
 
- const canal = await guild.channels.create({
+ const canal = await guild.channels.create(
 
- name:💰pagamento-${tipo},
+ name = pagamento-$,{tipo},
 
- parent:CATEGORIA,
+ parent=CATEGORIA,
 
- permissionOverwrites:[
-
+ permissionOverwrites,[
+    
  {
 
  id:guild.id,
@@ -234,7 +232,7 @@ async function criarPagamento(guild,tipo){
 
  ]
 
- });
+ );
 
 // MSG
 
