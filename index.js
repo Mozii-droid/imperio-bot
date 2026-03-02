@@ -289,7 +289,7 @@ console.log("TOKEN existe?", TOKEN ? "SIM" : "NÃO");
 
 client.once("ready", () => {
   console.log("Entrou no ready");
-  console.log(Bot conectado como ${client.user.tag});
+  console.log('Bot conectado como ${client.user.tag}');
 });
 
 client.on("error", (err) => {
@@ -297,6 +297,7 @@ client.on("error", (err) => {
 });
 
 client.login(TOKEN);
+
 
 
 
