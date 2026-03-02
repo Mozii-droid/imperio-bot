@@ -30,7 +30,6 @@ app.listen(process.env.PORT || 3000, () => {
 
 // ================= CONFIG =================
 
-const TOKEN = process.env.TOKEN;
 const PIX = "COLOQUE_SUA_CHAVE_PIX";
 const MEDIADOR = "1476397553363849277";
 const CATEGORIA = "1476425541174427720";
@@ -48,13 +47,6 @@ const filas = {
  "4v4": { mediador:null, jogadores:[], max:8, preco:8 }
 
 };
-
-// BOT ONLINE
-
-client.on('ready', () => {
-  client.user.setStatus('online');
-  console.log('Bot conectado como ${client.user.tag}');
-});
 
 // CRIAR PAINEL
 
@@ -284,7 +276,17 @@ Envie comprovante`
 
 }
 
+// BOT ONLINE
+
+const TOKEN = process.env.TOKEN;
+
+client.on('ready', () => {
+  client.user.setStatus('online');
+  console.log('Bot conectado como ${client.user.tag}');
+});
+
 client.login(TOKEN);
+
 
 
 
