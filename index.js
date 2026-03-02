@@ -28,6 +28,28 @@ app.listen(process.env.PORT || 3000, () => {
   console.log("Servidor web ativo");
 });
 
+// BOT ONLINE
+
+const TOKEN = process.env.TOKEN;
+
+client.on('ready', () => {
+  client.user.setStatus('online');
+  console.log('Bot conectado como ${client.user.tag}');
+});
+
+console.log("TOKEN existe?", TOKEN ? "SIM" : "NÃO");
+
+client.once("ready", () => {
+  console.log("Entrou no ready");
+  console.log('Bot conectado como ${client.user.tag}');
+});
+
+client.on("error", (err) => {
+  console.error("Erro no client:", err);
+});
+
+client.login(TOKEN);
+
 // ================= CONFIG =================
 
 const PIX = "COLOQUE_SUA_CHAVE_PIX";
@@ -275,28 +297,6 @@ Envie comprovante`
  fila.jogadores=[];
 
 }
-
-// BOT ONLINE
-
-const TOKEN = process.env.TOKEN;
-
-client.on('ready', () => {
-  client.user.setStatus('online');
-  console.log('Bot conectado como ${client.user.tag}');
-});
-
-console.log("TOKEN existe?", TOKEN ? "SIM" : "NÃO");
-
-client.once("ready", () => {
-  console.log("Entrou no ready");
-  console.log('Bot conectado como ${client.user.tag}');
-});
-
-client.on("error", (err) => {
-  console.error("Erro no client:", err);
-});
-
-client.login(TOKEN);
 
 
 
