@@ -51,9 +51,9 @@ const filas = {
 
 // BOT ONLINE
 
-client.on('ready', ()=>{
-
-});
+client.on('ready', () => {
+  client.user.setStatus('online');
+  console.log(Bot conectado como ${client.user.tag});
 
 // CRIAR PAINEL
 
@@ -284,6 +284,7 @@ Envie comprovante`
 }
 
 client.login(TOKEN);
+
 
 
 
