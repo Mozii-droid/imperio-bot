@@ -285,7 +285,19 @@ client.on('ready', () => {
   console.log('Bot conectado como ${client.user.tag}');
 });
 
+console.log("TOKEN existe?", TOKEN ? "SIM" : "NÃO");
+
+client.once("ready", () => {
+  console.log("Entrou no ready");
+  console.log(Bot conectado como ${client.user.tag});
+});
+
+client.on("error", (err) => {
+  console.error("Erro no client:", err);
+});
+
 client.login(TOKEN);
+
 
 
 
