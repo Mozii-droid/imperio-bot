@@ -28,8 +28,6 @@ app.listen(process.env.PORT || 3000, () => {
   console.log("Servidor web ativo");
 });
 
-client.login(process.env.TOKEN);
-
 // ================= CONFIG =================
 
 const TOKEN = process.env.TOKEN;
@@ -286,6 +284,7 @@ Envie comprovante`
 }
 
 client.login(TOKEN);
+
 
 
 
